@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Carga React, ReactDOM y Babel -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script> 
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>ReactApp</title>
+</head>
+<body>
+    <h1>Desestructuración de arreglos</h1>
+    <script type="text/babel">  // es tipo babel para que babel compile el codigo adecuadamente a javascript sin esta etiqueta no funciona
+
+        /*
+        *   En este fichero se muestra el uso de la deseestructuración de arreglos.
+        */
+
+
+        const personajes = ['Goku','Vegeta','Trunks'];
+
+        /* si disponemos de un arreglocomo el anterior y queremos acceder a un componenete deberiamos hacerlo de la siguiente manera: */
+        console.log (personajes[0]);
+        console.log (personajes[1]);
+        console.log (personajes[2]);
+
+        /* para extraer el contenido del arreglo sin usar el nombre podemos usar :*/
+
+        const [p1,,p3] = personajes; // crea dos constantes llamadas p1 y p3 y asigna a p1 el elemento[0] y a p3 el elemento[2] 
+
+
+        console.log (p1);
+        console.log (p3);
+
+        // Desestructurar el resultado de una función
+        const retornaArreglo = () => {
+            return ['ABC',123];
+        }
+
+        const [letras, numeros] = retornaArreglo();
+
+        console.log(letras, numeros);
+
+        // Tarea 
+        // 1. el primer valor del arr se llamará nombre
+        // 2. se llamará setNombre
+
+        const useState = (valor) => {
+            return [valor, () => {console.log('Hola Mundo')}];
+        }
+
+        const [nombre, setNombre] = useState('Goku');
+
+        console.log(nombre);
+        setNombre();
+
+
+
+    </script>
+</body>
+</html>

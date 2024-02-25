@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Carga React, ReactDOM y Babel -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script> 
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>ReactApp</title>
+</head>
+<body>
+    <h1>Arreglos</h1>
+    <script type="text/babel">  // es tipo babel para que babel compile el codigo adecuadamente a javascript sin esta etiqueta no funciona
+
+        /*
+        *   En este fichero se muestra el uso de los arreglos (arrays).
+        */
+        /*  para crear un array literal se debe usar los corchetes [], la unica excepción en la que se permite usar new Array() es para
+            crear una array vacio con una cantidad fija de elementos, const arreglo = new Array( 100 );
+        */
+
+        const arreglo = []; 
+
+        /* para añadir elementos a un arreglo usamos el metodo push */
+
+        arreglo.push(1);
+        arreglo.push(2);
+        arreglo.push(3);
+        arreglo.push(4);
+        arreglo.push(5);
+        arreglo.push(6);
+
+        console.log(arreglo);
+        console.table(arreglo);
+
+        let arreglo2 = [arreglo,5];
+        console.log(arreglo2);
+        /* para clonar un arreglo se usa el operador spread (los tres puntos ...) */
+
+        let arreglo3 = [...arreglo,5];
+        console.log(arreglo3);
+        /* Podemo usar el proptotipo map para crear un nuevo arreglo, en este caso el prototipo map() ejecuta la función (callback)
+            para cada elemento del arreglo origen y el resultado lo asigna al nuevo arreglo 
+            link de documentacion de map() : https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/map */
+            
+        const arreglo4 = arreglo3.map( function (numero){
+            return numero * 2;
+        })
+
+        console.log(arreglo4);
+
+
+    </script>
+</body>
+</html>

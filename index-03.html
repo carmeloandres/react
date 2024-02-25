@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Carga React, ReactDOM y Babel -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script> 
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>ReactApp</title>
+</head>
+<body>
+    <h1>Template String</h1>
+    <script type="text/babel">  // es tipo babel para que babel compile el codigo adecuadamente a javascript sin esta etiqueta no funciona
+
+        /*
+        *   En este fichero se muestra el uso de los template strings.
+        */
+
+        const nombre = 'Carmelo';
+        const apellido = 'Andres';
+
+        const nombreCompleto = nombre + ' ' + apellido; // concatenación habitual de strings
+
+        console.log(nombreCompleto);
+
+        // Para usar template string hemos de utilizar las comillar inversas `` (backtips)
+        // usando template string podemos usar variable javascrip dentro de un string
+        const nombreCompleto1 = `${ nombre } ${ apellido }`; 
+
+        console.log(nombreCompleto1);
+
+        // los template strings respetan los espacios,las tabulaciones y los saltos de linea
+        const nombreCompleto2 = `
+        ${ nombre } 
+        ${ apellido }
+        `; 
+
+        console.log(nombreCompleto2);
+
+        // Otra cosa interesante de los template strings es que se permite mostrar el resultado de funciones ejecutadas, o llamadas en su interior
+
+        function getSaludo(nombre){
+            return 'Hola ' + nombre;
+        }
+
+
+        console.log(`Este es un texto : ${getSaludo(nombreCompleto)}`);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Carga React, ReactDOM y Babel -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script> 
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>ReactApp</title>
+</head>
+<body>
+    <h1>Objetos literales</h1>
+    <script type="text/babel">  // es tipo babel para que babel compile el codigo adecuadamente a javascript sin esta etiqueta no funciona
+
+        /*
+        *   En este fichero se muestra el uso de los objetos literales.
+        */
+
+        /*
+        *   Creamos un objeto de tipo persona
+        *   para instanciarlo podemos usar el mismo nombre 'persona' 
+        */
+       const persona = {
+           nombre: 'Tony',
+           apellido: 'Stark',
+           edad: 45,
+       };
+            console.log(persona);
+
+        /*  o podemos crear uno nuevo a partir de el {persona : persona} esto seria un objeto persona con la propiedad persona */
+
+        console.log( {persona : persona} );
+        console.log({persona});
+        /* Podemo usar un console.table para ver mejor la estructura del objeto */persona
+        console.table(persona);
+
+        /* se pueden anidar objetos, mejo no usar caracteres especiales por si los navegadores usan un charset diferente */
+
+        const personaAmpliado = {
+           nombre: 'Tony',
+           apellido: 'Stark',
+           edad: 45,
+           direccion: {
+               ciudad: 'New York',
+               zip: 5989929,
+               lat: 14.58023,
+               lng: 34.97987
+           }
+       };
+       console.log(personaAmpliado);
+
+       /*   Para clonar un objeto no se debe usar el igual '=' porque hace una copia de la referencia, ambos apuntan al mismo objeto 
+            hay que evitarlo, para hacer la clonación */
+
+        const persona2 = {...persona};
+
+        persona2.nombre = 'Carmelo';
+        console.log(persona);
+        console.log(persona2);
+
+    </script>
+</body>
+</html>

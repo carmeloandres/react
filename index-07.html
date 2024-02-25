@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Carga React, ReactDOM y Babel -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script> 
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>ReactApp</title>
+</head>
+<body>
+    <h1>Desestructuración de objetos</h1>
+    <script type="text/babel">  // es tipo babel para que babel compile el codigo adecuadamente a javascript sin esta etiqueta no funciona
+
+        /*
+        *   En este fichero se muestra el uso de la deseestructuración de objetos.
+            asignación deseestructurante
+            información adicional: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+        */
+
+
+        const persona = {
+            nombre: 'Tony',
+            edad: 45,
+            clave: 'Ironman'
+        };
+
+        /* si disponemos de un objeto como el anterior y queremos acceder a un atributo deberiamos hacerlo de la siguiente manera: */
+        console.log (persona.nombre);
+        console.log (persona.edad);
+        console.log (persona.clave);
+
+        /* para extraer el contenido del objeto sin usar el nombre podemos usar :*/
+
+        const {nombre} = persona; // crea una constante llamada 'nombre' y asigna/estrae el contenido de persona.nombre
+        const {nombre:nombre2} = persona; // crea una constante llamada 'nombre2' y asigna/estrae el contenido de persona.nombre
+
+        console.log (nombre);
+        console.log (nombre2);
+
+        const {nombre:nombre3, edad, clave} = persona;
+
+        console.log (nombre3);
+        console.log (edad);
+        console.log (clave);
+
+        // Podemos desestructurar directamente en los argumentos de una funcion
+
+        const imprimePersona = ({ nombre, edad }) => {
+
+            console.log (nombre);
+            console.log (edad);
+
+        }
+
+        imprimePersona( persona );
+
+        // Otra cosa de hacer la desestructuración directamente en los argumentos de una funcion es la de 
+        // poder asignar valores por defecto
+
+        const imprimePersona2 = ({ nombre, edad, rango = 'Capitan' }) => {
+
+            console.log (nombre);
+            console.log (edad);
+            console.log (rango);
+        }
+
+        imprimePersona2( persona );
+
+        const useContext = ({clave, nombre, edad, rango = 'Capitan'}) => {
+            return {
+                nombreClave: clave,
+                anios: edad,
+                latlng:{
+                    lat:14.1234,
+                    lng: -12.1234
+                }
+            }
+        }
+        //podemos extraer objetos anidados
+        const {nombreClave, anios, latlng:{lat,lng}} = useContext( persona);
+  
+        console.log(nombreClave, anios);
+        console.log(lat, lng);
+
+    </script>
+</body>
+</html>

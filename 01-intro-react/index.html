@@ -1,0 +1,51 @@
+<!-- Instalaciones necesarias
+    https://gist.github.com/Klerith/4a4abfd88a88b2d1f16efd95fea41362
+
+    - Google Chrome
+    - React Developer Tools  (extension de google chrome) https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=es&authuser=1
+    - Redux Devtools (extensión de google chrome) https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=es
+    - Visual Studio Code
+        - Instalar extensiones
+            ES7 React/Redux         https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets
+            Simple React Snippets   https://marketplace.visualstudio.com/items?itemName=burkeholland.simple-react-snippets
+            Auto Close Tag          https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag
+    - Postman (para realizar pruebas a API) https://www.postman.com/downloads/
+    - Mongo Compass (usar la base de datos de mongo) https://www.mongodb.com/try/download/compass
+    - Git (gestor de versiones) https://git-scm.com/
+            - Configuración Git tras instalación:
+                (Comprobar la versión de git )          $ git --version
+                (Establecer mi nombre de usuario local) $ git config --global user.name "carmelo"
+                (Establecer mi email)                   $ git config --global user.email "carmeload@gmail.com"
+    - Node (motor de javascript) https://nodejs.org/es/
+
+
+    01 - INTRODUCCIÓN
+
+    Descargar enlaces CDN de React actualizados en: https://es.reactjs.org/docs/cdn-links.html
+
+
+
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Carga React, ReactDOM y Babel -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script> 
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>ReactApp</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">  // es tipo babel para que babel compile el codigo adecuadamente a javascript sin esta etiqueta no funciona
+        const divRoot = document.querySelector('#root');
+        const nombre = 'Goku';
+        const h1Tag = <h1>Hola, soy { nombre }</h1>;
+
+        ReactDOM.render(h1Tag,divRoot);
+    </script>
+</body>
+</html>

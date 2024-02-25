@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Carga React, ReactDOM y Babel -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script> 
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>ReactApp</title>
+</head>
+<body>
+    <h1>Funciones</h1>
+    <script type="text/babel">  // es tipo babel para que babel compile el codigo adecuadamente a javascript sin esta etiqueta no funciona
+
+        /*
+        *   En este fichero se muestra el uso de las funciones.
+        */
+
+        /* al crear funciones de este modo podemos entrar en conflicto con otras declaraciones que ya esten declaradas con el mismo nombre */saludar
+
+        function saludar( nombre ){
+            return `Hola, ${ nombre }`;
+        }
+
+        /* lo mejor es declarar funciones de la siguiente manera, con const */
+
+        const saludar2 = function( nombre) {
+            return `Hola, ${ nombre }`;
+        }
+
+        /* Se pueden usar funciones de flecha como la siguiente */
+
+        const saludar3 = (nombre) => {
+            return `Hola, ${ nombre }`;
+        }
+
+        /* o asi, cuando el return es sencillo*/
+
+        const saludar4 = () => `Hola, Mundo`;
+
+        /* en el caso de querer retornar un objeto usando el metodo sencillo tendriamos que incluir el objeto entre parentesis */
+
+        const getUser = () => (
+            {
+                uid: 'ABCDE',
+                username: 'El_papi1502'
+            }
+        );
+        
+
+
+
+        console.log(saludar('Goku'));
+        console.log(saludar2('Carmelo'));
+        console.log(saludar3('tony'));
+        console.log(saludar4());
+        console.log(getUser());
+
+        // Tarea 
+        // 1. Transformar a una función de flecha
+        // 2. Tiene que retornar un objeto implicito
+        // 3. Probarlo
+        //
+        // function getUsuarioActivo ( nombre) {
+        //    return {
+        //        uid: 'ABCD',
+        //        username: nombre
+        //    }
+        //};
+
+        const getUsuarioActivo = (nombre) => (
+            {
+                uid: 'ABCD',
+                username: nombre 
+            }
+        )
+
+        const usuarioActivo = getUsuarioActivo('Fernando');
+        console.log( usuarioActivo );
+
+    </script>
+</body>
+</html>
